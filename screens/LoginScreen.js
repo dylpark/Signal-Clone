@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Button, Input, Image } from "react-native-elements";
 import { StatusBar } from "expo-status-bar";
 
 const LoginScreen = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const signIn = () => {};
+
   return (
     <View>
-      <StatusBar style="light" />
+      <StatusBar style={styles.container} />
       <Image
         source={{
           uri: "https://blog.mozilla.org/internetcitizen/files/2018/08/signal-logo.png",
@@ -15,9 +20,31 @@ const LoginScreen = () => {
       />
 
       <View style={styles.inputContainer}>
-        <Input placeholder="Email" autoFocus type="email" />
-        <Input placeholder="Password" secureTextEntry type="password" />
+        <Input
+          placeholder="Email"
+          autoFocus
+          type="email"
+          value={email}
+          onChangeText={(text) => setEmail(text)}
+        />
+        <Input
+          placeholder="Password"
+          secureTextEntry
+          type="password"
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+        />
       </View>
+      <Button
+        containerStyle={styles.button}
+        onPress={signIn}
+        title="Login"
+      ></Button>
+      <Button
+        containerStyle={styles.button}
+        type="outline"
+        title="Register"
+      ></Button>
     </View>
   );
 };
@@ -25,5 +52,13 @@ const LoginScreen = () => {
 export default LoginScreen;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 10,
+    backgroundColor: "white",
+  },
   inputContainer: {},
+  button: {},
 });
