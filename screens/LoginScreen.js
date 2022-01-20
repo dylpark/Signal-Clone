@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, KeyboardAvoidingView } from "react-native";
 import { Button, Input, Image } from "react-native-elements";
 import { StatusBar } from "expo-status-bar";
 
@@ -10,8 +10,8 @@ const LoginScreen = () => {
   const signIn = () => {};
 
   return (
-    <View>
-      <StatusBar style={styles.container} />
+    <KeyboardAvoidingView behavior="padding" style={styles.container}>
+      <StatusBar style="light" />
       <Image
         source={{
           uri: "https://blog.mozilla.org/internetcitizen/files/2018/08/signal-logo.png",
@@ -45,7 +45,7 @@ const LoginScreen = () => {
         type="outline"
         title="Register"
       ></Button>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
