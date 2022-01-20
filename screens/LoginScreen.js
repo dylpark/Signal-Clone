@@ -45,6 +45,7 @@ const LoginScreen = () => {
         type="outline"
         title="Register"
       ></Button>
+      <View containerStyle={{ height: 100 }} />
     </KeyboardAvoidingView>
   );
 };
@@ -59,6 +60,11 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "white",
   },
-  inputContainer: {},
-  button: {},
+  inputContainer: {
+    width: 300,
+  },
+  button: {
+    width: 200,
+    marginTop: 10,
+  },
 });
