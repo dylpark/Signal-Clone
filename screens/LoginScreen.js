@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, KeyboardAvoidingView } from "react-native";
 import { Button, Input, Image } from "react-native-elements";
 import { StatusBar } from "expo-status-bar";
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -44,6 +44,7 @@ const LoginScreen = () => {
         containerStyle={styles.button}
         type="outline"
         title="Register"
+        onPress={() => navigation.navigate("Register")}
       ></Button>
       <View containerStyle={{ height: 100 }} />
     </KeyboardAvoidingView>

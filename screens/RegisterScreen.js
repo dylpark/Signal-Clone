@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const RegisterScreen = () => {
+const RegisterScreen = ({ navigation }) => {
   return (
     <View>
-      <Text></Text>
+      <Text>The Register Screen</Text>
     </View>
   );
 };
