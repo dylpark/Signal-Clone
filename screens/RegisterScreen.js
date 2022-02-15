@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import { KeyboardAvoidingView } from "react-native";
 import { Button, Input, Image, Text } from "react-native-elements";
 import React, { useLayoutEffect, useState } from "react";
+import { auth } from "../firebase";
 
 const RegisterScreen = ({ navigation }) => {
   const [name, setName] = useState("");
@@ -16,7 +17,19 @@ const RegisterScreen = ({ navigation }) => {
     });
   }, [navigation]);
 
-  const register = () => {};
+  const register = () => {
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((authUser) => {
+        authUser.user.update({
+          displayName: name,
+          photoUrl:
+            imageUrl ||
+            "https://blog.mozilla.org/internetcitizen/files/2018/08/signal-logo.png",
+        });
+      })
+      .catch((err) => alert(err.message));
+  };
 
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
