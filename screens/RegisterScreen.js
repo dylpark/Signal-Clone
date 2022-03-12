@@ -3,7 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import { KeyboardAvoidingView } from "react-native";
 import { Button, Input, Image, Text } from "react-native-elements";
 import React, { useLayoutEffect, useState } from "react";
-import { auth } from "../firebase";
+// import { auth } from "../firebase";
 
 const RegisterScreen = ({ navigation }) => {
   const [name, setName] = useState("");
