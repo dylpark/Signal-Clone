@@ -21,9 +21,8 @@ const HomeScreen = ({ navigation }) => {
     });
   };
 
-  useLayoutEffect(() => {
-    
-  })
+  useLayoutEffect(() => {});
+};
 
 export default HomeScreen;
 
