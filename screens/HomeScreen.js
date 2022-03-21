@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { Avatar } from "react-native-elements";
 import { AntDesign, SimpleLineIcons } from "@expo/vector-icons";
-import { auth, db } from "../firebase";
+import { auth, db } from "./firebase";
 
 const HomeScreen = ({ navigation }) => {
   const [chats, setChats] = useState([]);
@@ -21,6 +21,12 @@ const HomeScreen = ({ navigation }) => {
   };
 
   useLayoutEffect(() => {});
+
+  return (
+    <SafeAreaView>
+      <Text>This is home screen</Text>
+    </SafeAreaView>
+  );
 };
 
 export default HomeScreen;
